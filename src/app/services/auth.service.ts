@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
+  isLoggedIn = false;
+
   constructor() {}
 
   getLoginStatus() {
@@ -12,8 +14,9 @@ export class AuthService {
         data.userName.toLowerCase() == userDetails.userName.toLowerCase() &&
         data.password.toLowerCase() == userDetails.password.toLowerCase()
       ) {
-        return true;
+        this.isLoggedIn = true;
       }
     });
+    return this.isLoggedIn;
   }
 }
