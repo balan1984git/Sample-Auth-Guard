@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ export class RegisterComponent implements OnInit {
   loading = false;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -34,5 +35,6 @@ export class RegisterComponent implements OnInit {
       password: this.form.value.password,
     });
     localStorage.setItem('users', JSON.stringify(users));
+    this.router.navigate(['login']);
   }
 }
