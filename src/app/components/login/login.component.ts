@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         data.userName.toLowerCase() == userDetails.userName.toLowerCase() &&
         data.password.toLowerCase() == userDetails.password.toLowerCase()
       ) {
-        this.router.navigate(['home']);
+        this.router.navigate(['upload']);
       } else {
         this.loginErrorMessage = 'Invalid login credentials';
       }

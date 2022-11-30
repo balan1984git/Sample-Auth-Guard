@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth.service';
+import { UploadAndReadComponent } from './components/upload-and-read/upload-and-read.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { AuthService } from './services/auth.service';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    UploadAndReadComponent,
   ],
   providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent],

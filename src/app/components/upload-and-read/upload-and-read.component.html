@@ -1,0 +1,20 @@
+<h1>Please upload CSV file or Excel file</h1>
+<div class="uploadDocument">
+  <input
+    id="my-file-selector"
+    type="file"
+    (change)="uploadData($event)"
+    name="uploadExcel"
+  />
+</div>
+
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <th *ngFor="let header of tableTitle">{{ header }}</th>
+  </tr>
+  <tr *ngFor="let data of tableRecords; let i = index">
+    <td *ngFor="let header of tableTitle">
+      {{ data[header] }}
+    </td>
+  </tr>
+</table>
