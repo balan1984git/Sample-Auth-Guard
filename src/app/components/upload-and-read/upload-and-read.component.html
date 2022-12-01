@@ -1,11 +1,17 @@
 <h1>Please upload CSV file or Excel file</h1>
 <div class="uploadDocument">
-  <input
-    id="my-file-selector"
-    type="file"
-    (change)="uploadData($event)"
-    name="uploadExcel"
-  />
+  <div
+    class="fileContainer"
+    appFileDragDrop
+    (filesChangeEmiter)="uploadData($event)"
+  >
+    <input
+      id="my-file-selector"
+      type="file"
+      (change)="uploadData($event)"
+      name="uploadExcel"
+    />
+  </div>
 </div>
 
 <table cellspacing="0" cellpadding="0">

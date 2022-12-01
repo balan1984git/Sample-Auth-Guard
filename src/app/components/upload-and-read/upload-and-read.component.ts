@@ -45,10 +45,12 @@ export class UploadAndReadComponent implements OnInit {
       console.log(data); // Data will be logged in array format containing objects
       this.tableData = data;
       this.tableTitle = Object.keys(this.tableData[0]);
+      console.log(this.tableTitle);
       this.tableRecords = this.tableData.slice(
         this.pageStartCount,
         this.pageEndCount
       );
+      console.log(this.tableRecords);
       this.totalPageCount = this.tableData.length / this.recordsPerPage;
     };
   }
